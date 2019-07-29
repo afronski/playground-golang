@@ -1,6 +1,6 @@
 GOCMD=go
 
-BINARY_NAME=bf-repl
+BINARY_NAME=brainfuck
 
 all: build
 
@@ -18,4 +18,4 @@ vet:
 	$(GOCMD) vet
 
 run:
-	$(GOCMD) run -v ./bf-repl.go
+	$(GOCMD) run -v ./brainfuck.go

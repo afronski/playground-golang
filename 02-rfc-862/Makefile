@@ -17,7 +17,8 @@ format:
 	$(GOCMD) fmt
 
 vet:
-	$(GOCMD) vet
+	$(GOCMD) vet echo-server.go
+	$(GOCMD) vet echo-client.go
 
 run-server:
 	$(GOCMD) run -v ./echo-server.go

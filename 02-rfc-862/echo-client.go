@@ -38,7 +38,7 @@ func handleSignals() {
 	go signalLoop()
 }
 
-func connectToServer() (net.Conn) {
+func connectToServer() net.Conn {
 	conn, err := net.Dial("tcp", hostAndPort)
 	exit_on_error(err)
 
