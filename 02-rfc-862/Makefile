@@ -6,15 +6,17 @@ CLIENT_BINARY_NAME=echo-client
 all: build
 
 build:
-	$(GOCMD) build -o $(SERVER_BINARY_NAME) -v
-	$(GOCMD) build -o $(CLIENT_BINARY_NAME) -v
+	$(GOCMD) build -v -o $(SERVER_BINARY_NAME) echo-server.go
+	$(GOCMD) build -v -o $(CLIENT_BINARY_NAME) echo-client.go
 
 clean:
 	$(GOCMD) clean
-	rm -f $(BINARY_NAME)
+	rm -f $(SERVER_BINARY_NAME)
+	rm -f $(CLIENT_BINARY_NAME)
 
 format:
-	$(GOCMD) fmt
+	$(GOCMD) fmt echo-server.go
+	$(GOCMD) fmt echo-client.go
 
 vet:
 	$(GOCMD) vet echo-server.go
